@@ -1,0 +1,8 @@
+body.is-debug {
+  .grid__element > * {
+    outline: 1px solid transparentize(green, .9);
+  }
+  .container > * {
+    outline: 1px solid transparentize(blue, .9);
+  }
+}

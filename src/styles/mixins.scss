@@ -1,0 +1,20 @@
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin square($size) {
+  @include size($size, $size);
+}
+
+@mixin circle($size, $background-color: transparent, $border: none) {
+  @include square($size);
+  background-color: $background-color;
+  border-radius: 50%;
+  border: $border;
+}
+
+@mixin img-fluid {
+  max-width: 100%;
+  height: auto;
+}
