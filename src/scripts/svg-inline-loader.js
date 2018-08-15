@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   async function mount(icon) {
     const name = icon.getAttribute('name')
-    let currPath = req('./' + name + '.svg')
+    let currPath = req(`./${name}.svg`)
     if (!cache.has(currPath)) {
       try {
         cache.set(currPath, fetch(currPath).then(r => r.text()))

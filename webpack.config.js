@@ -9,6 +9,7 @@ const templates = ['index']
 
 const isProd = process.env.NODE_ENV === 'production'
 const ASSETS_DIR = 'assets'
+const TEMP_DIR = 'tmp'
 const htmlWebpackPlugins = () =>
   templates.map(
     name =>
@@ -25,7 +26,7 @@ const debug = isProd ? {} : { __debug: './src/scripts/debug.js' }
 const entryTemplates = templates.reduce(
   (acc, name) => ({
     ...acc,
-    [`__template_${name}`]: `./src/views/templates/${name}`
+    [`template_${name}`]: `./src/views/templates/${name}`
   }),
   {}
 )
@@ -41,18 +42,17 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, './build'),
-    filename: `${ASSETS_DIR}/js/[name].js`,
+    filename: ({chunk: {name}}) => {
+      const isTempChunk = name.includes('template_') || name.includes('styles')
+      return isTempChunk ? `${TEMP_DIR}/[name].js` : `${ASSETS_DIR}/js/[name].js`
+    },
+
     publicPath: '/'
   },
 
   mode: isProd ? 'production' : 'development',
 
   devtool: isProd ? false : 'inline-source-map',
-
-  devServer: {
-    contentBase: './build',
-    port: 9100
-  },
 
   resolve: {
     extensions: ['.js'],
@@ -119,11 +119,19 @@ module.exports = {
     ...htmlWebpackPlugins(),
     new HtmlWebpackExcludeAssetsPlugin(),
     new MiniCssExtractPlugin({
-      filename: `${ASSETS_DIR}/css/[name].css`,
-      chunkFilename: `${ASSETS_DIR}/css/[id].css`
+      filename: `${ASSETS_DIR}/css/[name].css`
     }),
     new webpack.DefinePlugin({
       IS_PROD: JSON.stringify(isProd)
     })
   ]
+}
+
+module.exports.serve = {
+  port: 9300,
+  content: path.resolve(__dirname, './build'),
+  hotClient: {
+    autoConfigure: true,
+    allEntries: true
+  },
 }
