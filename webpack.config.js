@@ -42,10 +42,10 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, './build'),
-    filename: ({chunk: {name}}) => {
+    filename: isProd ? ({chunk: {name}}) => {
       const isTempChunk = name.includes('template_') || name.includes('styles')
       return isTempChunk ? `${TEMP_DIR}/[name].js` : `${ASSETS_DIR}/js/[name].js`
-    },
+    } : `${ASSETS_DIR}/js/[name].js`,
 
     publicPath: '/'
   },
@@ -54,8 +54,12 @@ module.exports = {
 
   devtool: isProd ? false : 'inline-source-map',
 
+  devServer: {
+    contentBase: './build',
+    port: 9100
+  },
+
   resolve: {
-    extensions: ['.js'],
     alias: {
       '@': path.resolve(__dirname, 'src')
     }
@@ -125,13 +129,4 @@ module.exports = {
       IS_PROD: JSON.stringify(isProd)
     })
   ]
-}
-
-module.exports.serve = {
-  port: 9300,
-  content: path.resolve(__dirname, './build'),
-  hotClient: {
-    autoConfigure: true,
-    allEntries: true
-  },
 }
