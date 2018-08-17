@@ -1,0 +1,29 @@
+{% extends "../../layouts/base.twig" %}
+
+{% block page %}
+  <div class="container layout__container">
+    <article class="layout__main">
+      <h1>Главное</h1>
+      <span class="svg-icon" name="cloud-drizzle"></span>
+      <span class="svg-icon" name="cloud-drizzle"></span>
+      <span class="svg-icon" name="cloud-drizzle"></span>
+      <span class="svg-icon" name="icon_scheduled"></span>
+      <span class="svg-icon" name="icon_scheduled"></span>
+      <ul>
+        {% for value in benefits %}
+          <li>{{ value }}</li>
+        {% endfor %}
+      </ul>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque aliquid est nemo possimus fugiat eaque autem, nihil ea iste, tempore asperiores dicta ullam nulla! Libero quod aspernatur reprehenderit sapiente accusamus!</p>
+    </article>
+    <article class="layout__actions">
+      <h1>Избранные сценарии</h1>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque aliquid est nemo possimus fugiat eaque autem, nihil ea iste, tempore asperiores dicta ullam nulla! Libero quod aspernatur reprehenderit sapiente accusamus!</p>
+    </article>
+    <article class="layout__devices">
+      <h1>Избранные устройства</h1>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque aliquid est nemo possimus fugiat eaque autem, nihil ea iste, tempore asperiores dicta ullam nulla! Libero quod aspernatur reprehenderit sapiente accusamus!</p>
+    </article>
+
+  </div>
+{% endblock %}

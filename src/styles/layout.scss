@@ -1,0 +1,31 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  display: grid;
+  grid-template-rows: min-content auto min-content;
+}
+
+.layout {
+  &__container {
+    display: grid;
+    grid-gap: 26px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "lm la"
+      "ld ld";
+  }
+  &__main {
+    grid-area: lm;
+  }
+  &__actions {
+    grid-area: la;
+  }
+  &__devices {
+    grid-area: ld;
+  }
+}
+
+

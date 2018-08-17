@@ -1,0 +1,18 @@
+.footer {
+  &__container {
+    padding-top: 2em;
+    padding-bottom: 2em;
+    font-size: 12px;
+    display: flex;
+  }
+
+  &__nav-list {
+    display: flex;
+  }
+  &__nav-item {
+    margin: 0 1em 0 0;
+  }
+  &__copyright {
+    margin-left: auto;
+  }
+}

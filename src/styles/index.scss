@@ -2,8 +2,9 @@
 @import "variables";
 @import "mixins";
 
-@import "reset";
+@import "common";
 @import "typography";
+@import "layout";
 
 @import "elements";
 @import "patterns";
@@ -11,12 +12,3 @@
 
 /* === */
 @import "debug";
-
-.clock-arrows {
-  opacity: 1;
-  stroke: red;
-}
-.clock-body {
-  fill: lightcyan;
-  stroke: lightgreen;
-}

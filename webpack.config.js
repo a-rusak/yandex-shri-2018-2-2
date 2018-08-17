@@ -10,12 +10,13 @@ const templates = ['index']
 const isProd = process.env.NODE_ENV === 'production'
 const ASSETS_DIR = 'assets'
 const TEMP_DIR = 'tmp'
+
 const htmlWebpackPlugins = () =>
   templates.map(
     name =>
       new HtmlWebpackPlugin({
         filename: `${name}.html`,
-        template: `./src/views/templates/${name}`,
+        template: `./src/views/pages/${name}`,
         excludeChunks: Object.keys(entryTemplates),
         excludeAssets: [/styles.js/]
       })
@@ -26,7 +27,7 @@ const debug = isProd ? {} : { __debug: './src/scripts/debug.js' }
 const entryTemplates = templates.reduce(
   (acc, name) => ({
     ...acc,
-    [`template_${name}`]: `./src/views/templates/${name}`
+    [`template_${name}`]: `./src/views/pages/${name}`
   }),
   {}
 )

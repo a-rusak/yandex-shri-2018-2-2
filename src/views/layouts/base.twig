@@ -9,14 +9,18 @@
 
 </head>
 <body>
+
   {% block header %}
-    {% include "../patterns/header.twig" %}
+    {% include "../templates/header.twig" %}
   {% endblock %}
+
   <main class="main">
     {% block page %}{% endblock %}
   </main>
+
   {% block footer %}
-    {% include "../patterns/footer.twig" %}
+    {% include "../templates/footer.twig" %}
   {% endblock %}
+
 </body>
 </html>
