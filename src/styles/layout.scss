@@ -1,14 +1,15 @@
-html {
-  height: 100%;
-}
-
-body {
-  height: 100%;
-  display: grid;
-  grid-template-rows: min-content auto min-content;
-}
-
 .layout {
+
+  &__html {
+    height: 100vh;
+  }
+
+  &__body {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: min-content auto min-content;
+  }
+
   &__container {
     display: grid;
     grid-gap: 26px;
