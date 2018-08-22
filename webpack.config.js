@@ -6,24 +6,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 const templates = ['index']
-
-const isProd = process.env.NODE_ENV === 'production'
-const ASSETS_DIR = 'assets'
-const TEMP_DIR = 'tmp'
-
-const htmlWebpackPlugins = () =>
-  templates.map(
-    name =>
-      new HtmlWebpackPlugin({
-        filename: `${name}.html`,
-        template: `./src/views/pages/${name}`,
-        excludeChunks: Object.keys(entryTemplates),
-        excludeAssets: [/styles.js/]
-      })
-  )
-
-const debug = isProd ? {} : { __debug: './src/scripts/debug.js' }
-
 const entryTemplates = templates.reduce(
   (acc, name) => ({
     ...acc,
@@ -31,6 +13,22 @@ const entryTemplates = templates.reduce(
   }),
   {}
 )
+
+const isProd = process.env.NODE_ENV === 'production'
+const ASSETS_DIR = 'assets'
+const TEMP_DIR = 'tmp'
+
+const htmlWebpackPlugins = templates.map(
+  name =>
+    new HtmlWebpackPlugin({
+      filename: `${name}.html`,
+      template: `./src/views/pages/${name}`,
+      excludeChunks: Object.keys(entryTemplates),
+      excludeAssets: [/styles.js/]
+    })
+)
+
+const debug = isProd ? {} : { __debug: './src/scripts/debug.js' }
 
 module.exports = {
   entry: {
@@ -43,10 +41,15 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, './build'),
-    filename: isProd ? ({chunk: {name}}) => {
-      const isTempChunk = name.includes('template_') || name.includes('styles')
-      return isTempChunk ? `${TEMP_DIR}/[name].js` : `${ASSETS_DIR}/js/[name].js`
-    } : `${ASSETS_DIR}/js/[name].js`,
+    filename: isProd
+      ? ({ chunk: { name } }) => {
+          const isTempChunk =
+            name.includes('template_') || name.includes('styles')
+          return isTempChunk
+            ? `${TEMP_DIR}/[name].js`
+            : `${ASSETS_DIR}/js/[name].js`
+        }
+      : `${ASSETS_DIR}/js/[name].js`,
 
     publicPath: '/'
   },
@@ -121,7 +124,7 @@ module.exports = {
     new CleanWebpackPlugin(['build'], {
       exclude: templates
     }),
-    ...htmlWebpackPlugins(),
+    ...htmlWebpackPlugins,
     new HtmlWebpackExcludeAssetsPlugin(),
     new MiniCssExtractPlugin({
       filename: `${ASSETS_DIR}/css/[name].css`

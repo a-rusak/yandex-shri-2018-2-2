@@ -7,7 +7,7 @@
   &__body {
     height: 100vh;
     display: grid;
-    grid-template-rows: min-content auto min-content;
+    grid-template-rows: auto 1fr auto;
   }
 
   &__container {
