@@ -1,9 +1,19 @@
 .card {
-  background-color: #F7F7F7;
+  $color-bg: #F7F7F7;
+  $color-bg-hover: $white;
+
+  background-color: $color-bg;
   border-radius: $border-radius-default;
   padding: 15px;
   display: flex;
   overflow: hidden;
+  border: none;
+
+  &:hover,
+  &:focus {
+    background-color: $color-bg-hover;
+    box-shadow: 0 2px 6px 0 rgba(197,186,186,0.50);
+  }
 
   &--action {
     width: 100%;

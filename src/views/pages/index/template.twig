@@ -29,21 +29,11 @@
       <div class="section__container actions-pager__container">
         <div class="actions-pager__wrapper">
           <div class="actions-pager__page">
-            <div class="actions-pager__card-holder">
-              <div class="card card--action">1</div>
-            </div>
-            <div class="actions-pager__card-holder">
-              <div class="card card--action">2</div>
-            </div>
-            <div class="actions-pager__card-holder">
-              <div class="card card--action">3</div>
-            </div>
-            <div class="actions-pager__card-holder">
-              <div class="card card--action">4</div>
-            </div>
-            <div class="actions-pager__card-holder">
-              <div class="card card--action">5</div>
-            </div>
+            {% for action in actions %}
+              <div class="actions-pager__card-holder">
+                {% include '../../patterns/card.twig' with action only %}
+              </div>
+            {% endfor %}
           </div>
         </div>
       </div>
@@ -57,9 +47,6 @@
       <div class="section__container devices-pager__container">
         <div class="devices-pager__wrapper">
           <div class="devices-pager__page">
-            <div class="devices-pager__card-holder">
-              <div class="card card--device">1</div>
-            </div>
             <div class="devices-pager__card-holder">
               <div class="card card--device">2</div>
             </div>
