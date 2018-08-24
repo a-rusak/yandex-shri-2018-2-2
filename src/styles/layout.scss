@@ -1,5 +1,4 @@
 .layout {
-
   &__html {
     height: 100vh;
   }
@@ -11,22 +10,35 @@
   }
 
   &__container {
+    padding-top: 30px;
+    padding-bottom: 30px;
     display: grid;
     grid-gap: 26px;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-      "lm la"
-      "ld ld";
+      'lm la'
+      'ld ld';
+
+    > * {
+      min-width: 0; // http://css-live.ru/articles/chto-mozhet-polomat-maket-na-gridax-css-grid-layout.html
+    }
   }
   &__main {
     grid-area: lm;
+    background: transparent url('../images/bg@1x.png');
+    background-size: cover;
+
+    // https://www.w3.org/blog/CSS/2012/06/14/unprefix-webkit-device-pixel-ratio/
+    @media (-webkit-min-device-pixel-ratio: 2), /* Webkit */
+      (min-resolution: 192dpi) /* Everyone else */ {
+        background-image: url('../images/bg@2x.png');
+      }
   }
   &__actions {
     grid-area: la;
+    position: relative;
   }
   &__devices {
     grid-area: ld;
   }
 }
-
-

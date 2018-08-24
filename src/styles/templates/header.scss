@@ -2,12 +2,12 @@
   &__container {
     display: flex;
     align-items: center;
-    padding-top: 2em;
-    padding-bottom: 2em;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
   &__title {
     margin: 0;
-    margin-right: 1em;
+    margin-right: 15px;
   }
   &__nav-list {
     display: flex;
@@ -24,7 +24,7 @@
     color: #333;
   }
   &__hr {
-    height: 0;
+    height: 2px;
     margin: 0;
     border: none;
     border-bottom: 1px solid #f0f0f0;
