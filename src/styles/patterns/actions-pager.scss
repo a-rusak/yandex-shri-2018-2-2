@@ -1,4 +1,4 @@
-.cards-pager {
+.actions-pager {
   &__container {
     overflow: hidden;
     width: 100%;
@@ -17,6 +17,8 @@
 
     grid-template-rows: repeat(3, 100px);
     grid-auto-rows: 0;
+  }
+  &__card-holder {
   }
 
   &__buttons-wrapper {
