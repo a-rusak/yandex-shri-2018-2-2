@@ -2,7 +2,7 @@
 
 {% block page %}
   <div class="container layout__container">
-    <section class="layout__main">
+    <section class="section section--main layout__main">
       <h1 class="section__title">Главное</h1>
       <div class="section__container main__container">
         <span class="svg-icon" name="cloud-drizzle"></span>
@@ -15,41 +15,74 @@
             <li>{{ value }}</li>
           {% endfor %}
         </ul>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque aliquid est nemo possimus fugiat eaque autem, nihil ea iste, tempore asperiores dicta ullam nulla! Libero quod aspernatur reprehenderit sapiente accusamus!</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque aliquid est nemo possimus fugiat eaque
+          autem, nihil ea iste, tempore asperiores dicta ullam nulla! Libero quod aspernatur reprehenderit sapiente
+          accusamus!</p>
       </div>
     </section>
-    <section class="layout__actions section">
+    <section class="section layout__actions">
       <h1 class="section__title">Избранные сценарии</h1>
-      <div class="cards-pager__buttons-wrapper">
-        <button id="prev">&lt;</button>
-        <button id="next">&gt;</button>
+      <div class="actions-pager__buttons-wrapper">
+        <button id="actions-page-prev">&lt;</button>
+        <button id="actions-page-next">&gt;</button>
       </div>
-      <div class="section__container cards-pager__container">
-        <div class="cards-pager__wrapper">
-          <div class="cards-pager__page">
-            <div class="card">1</div>
-            <div class="card">2</div>
-            <div class="card">3</div>
-            <div class="card">4</div>
-            <div class="card">5</div>
-            <div class="card">6</div>
-            <div class="card">7</div>
-            <div class="card">8</div>
-            <div class="card">9</div>
-            <div class="card">10</div>
-            <div class="card">11</div>
-            <div class="card">12</div>
-            <div class="card">13</div>
-            <div class="card">14</div>
-            <div class="card">15</div>
+      <div class="section__container actions-pager__container">
+        <div class="actions-pager__wrapper">
+          <div class="actions-pager__page">
+            <div class="actions-pager__card-holder">
+              <div class="card card--action">1</div>
+            </div>
+            <div class="actions-pager__card-holder">
+              <div class="card card--action">2</div>
+            </div>
+            <div class="actions-pager__card-holder">
+              <div class="card card--action">3</div>
+            </div>
+            <div class="actions-pager__card-holder">
+              <div class="card card--action">4</div>
+            </div>
+            <div class="actions-pager__card-holder">
+              <div class="card card--action">5</div>
+            </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="layout__devices">
+    <section class="section layout__devices">
       <h1 class="section__title">Избранные устройства</h1>
-      <div class="section__container">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque aliquid est nemo possimus fugiat eaque autem, nihil ea iste, tempore asperiores dicta ullam nulla! Libero quod aspernatur reprehenderit sapiente accusamus!</p>
+      <div class="devices-pager__buttons-wrapper">
+        <button id="devices-page-prev">&lt;</button>
+        <button id="devices-page-next">&gt;</button>
+      </div>
+      <div class="section__container devices-pager__container">
+        <div class="devices-pager__wrapper">
+          <div class="devices-pager__page">
+            <div class="devices-pager__card-holder">
+              <div class="card card--device">1</div>
+            </div>
+            <div class="devices-pager__card-holder">
+              <div class="card card--device">2</div>
+            </div>
+            <div class="devices-pager__card-holder">
+              <div class="card card--device">3</div>
+            </div>
+            <div class="devices-pager__card-holder">
+              <div class="card card--device">4</div>
+            </div>
+            <div class="devices-pager__card-holder">
+              <div class="card card--device">5</div>
+            </div>
+            <div class="devices-pager__card-holder">
+              <div class="card card--device">6</div>
+            </div>
+            <div class="devices-pager__card-holder">
+              <div class="card card--device">7</div>
+            </div>
+            <div class="devices-pager__card-holder">
+              <div class="card card--device">8</div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 

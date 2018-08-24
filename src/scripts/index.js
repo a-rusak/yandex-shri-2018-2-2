@@ -1,2 +1,3 @@
 import './svg-inline-loader'
-import './cards-pager'
+import './actions-pager'
+import './devices-pager'

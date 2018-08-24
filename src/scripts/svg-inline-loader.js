@@ -1,7 +1,9 @@
-let cache = new Map()
-const req = require.context('@/images/', true, /^\.\/.*\.svg$/)
+'use strict'
 
 document.addEventListener('DOMContentLoaded', () => {
+  let cache = new Map()
+  const req = require.context('@/images/', true, /^\.\/.*\.svg$/)
+
   !IS_PROD && console.log('DOMContentLoaded')
   ;[...document.querySelectorAll('.svg-icon')].forEach(mount)
 

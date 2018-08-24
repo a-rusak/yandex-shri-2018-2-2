@@ -1,0 +1,23 @@
+.section {
+  &--main {
+    display: grid;
+    grid-template-rows: auto 1fr;
+  }
+  &__title {
+    margin: 0 0 20px 0;
+    font-size: 18px;
+  }
+  &__container {
+    .section.section--main & {
+      background: transparent url('../images/bg@1x.png');
+      background-size: cover;
+      border-radius: 30px;
+
+      // https://www.w3.org/blog/CSS/2012/06/14/unprefix-webkit-device-pixel-ratio/
+      @media (-webkit-min-device-pixel-ratio: 2), /* Webkit */
+      (min-resolution: 192dpi) /* Everyone else */ {
+        background-image: url('../images/bg@2x.png');
+      }
+    }
+  }
+}

@@ -4,4 +4,13 @@
   padding: 15px;
   display: flex;
   overflow: hidden;
+
+  &--action {
+    width: 100%;
+    height: 100%;
+  }
+  &--device {
+    width: 100%;
+    height: 100%;
+  }
 }

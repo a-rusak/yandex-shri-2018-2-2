@@ -25,14 +25,6 @@
   }
   &__main {
     grid-area: lm;
-    background: transparent url('../images/bg@1x.png');
-    background-size: cover;
-
-    // https://www.w3.org/blog/CSS/2012/06/14/unprefix-webkit-device-pixel-ratio/
-    @media (-webkit-min-device-pixel-ratio: 2), /* Webkit */
-      (min-resolution: 192dpi) /* Everyone else */ {
-        background-image: url('../images/bg@2x.png');
-      }
   }
   &__actions {
     grid-area: la;
@@ -40,5 +32,6 @@
   }
   &__devices {
     grid-area: ld;
+    position: relative;
   }
 }
