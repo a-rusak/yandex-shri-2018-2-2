@@ -1,13 +1,15 @@
 .card {
   $color-bg: #F7F7F7;
   $color-bg-hover: $white;
+  $color-label: #858585;
 
   background-color: $color-bg;
   border-radius: $border-radius-default;
-  padding: 15px;
+  padding: 14px 15px;
   display: flex;
   overflow: hidden;
   border: none;
+  text-align: left;
 
   &:hover,
   &:focus {
@@ -18,9 +20,37 @@
   &--action {
     width: 100%;
     height: 100%;
+    display: grid;
+    grid-template-rows: 24px minmax(16px, 48px) minmax(0, min-content);
   }
   &--device {
     width: 100%;
     height: 100%;
   }
+
+  &__title {
+    margin: 0;
+    line-height: $line-height-small;
+    font-size: $font-size-small;
+    font-weight: bolder;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 5px;
+  }
+  &__label {
+    overflow: hidden;
+    font-size: $font-size-x-small;
+    line-height: $line-height-x-small;
+    color: $color-label;
+  }
+}
+
+.temperature-body {
+  stroke: #f5a623;
+  stroke-opacity: 1;
+}
+.temperature-mercury {
+  fill: #ffd93e;
+  fill-opacity: 1;
 }

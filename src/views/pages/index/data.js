@@ -14,7 +14,7 @@ module.exports = {
     {
       id: 2,
       isActive: false,
-      title: 'Я ухожу',
+      title: 'Я устал, я мухожук',
       icon: 'scheduled'
     },
     {
@@ -27,6 +27,7 @@ module.exports = {
       id: 4,
       isActive: true,
       title: 'Набрать горячую ванну',
+      label: 'Начнётся в 18:00',
       icon: 'temperature'
     },
     {

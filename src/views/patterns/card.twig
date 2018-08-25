@@ -1,4 +1,7 @@
-<button class="card card--action" id="card-action-{{ id }}">
+<div class="card card--action" id="card-action-{{ id }}">
   <span class="svg-icon" name="icon_{{ icon }}"></span>
-  <div>{{ title }}</div>
-</button>
+  <span class="card__title">{{ title }}</span>
+  {% if (label is defined) %}
+    <span class="card__label">{{ label }}</span>
+  {% endif %}
+</div>
