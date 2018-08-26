@@ -1,5 +1,4 @@
 module.exports = {
-  benefits: ['Fast', 'Secure'],
   logo: {
     '@1x': require('@/images/YandexHome@1x.png'),
     '@2x': require('@/images/YandexHome@2x.png')
@@ -87,11 +86,28 @@ module.exports = {
       label: 'Выключено до 17:00',
       icon: 'sun'
     }
+  ],
+  mainDevices: [
+    {
+      id: 201,
+      isActive: false,
+      title: 'Philips Cooler',
+      label: 'Начнет охлаждать в 16:30',
+      icon: 'temperature'
+    },
+    {
+      id: 202,
+      isActive: false,
+      title: 'Xiaomi Yeelight LED Smart Bulb',
+      label: 'Включится в 17:00',
+      icon: 'sun'
+    },
+    {
+      id: 203,
+      isActive: false,
+      title: 'Elgato Eve Degree Connected',
+      label: 'Выключено до 17:00',
+      icon: 'temperature'
+    }
   ]
-  // layoutMain: {
-  //   bg: {
-  //     '@1x': require('@/images/bg@1x.png'),
-  //     '@2x': require('@/images/bg@2x.png')
-  //   }
-  // }
 }

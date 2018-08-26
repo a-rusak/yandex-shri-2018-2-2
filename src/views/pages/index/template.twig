@@ -6,19 +6,33 @@
     <section class="section section--main layout__main">
       <h1 class="section__title">Главное</h1>
       <div class="section__container main__container">
-        <span class="svg-icon" name="cloud-drizzle"></span>
-        <span class="svg-icon" name="cloud-drizzle"></span>
-        <span class="svg-icon" name="cloud-drizzle"></span>
-        <span class="svg-icon" name="icon_scheduled"></span>
-        <span class="svg-icon" name="icon_scheduled"></span>
-        <ul>
-          {% for value in benefits %}
-            <li>{{ value }}</li>
-          {% endfor %}
-        </ul>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque aliquid est nemo possimus fugiat eaque
-          autem, nihil ea iste, tempore asperiores dicta ullam nulla! Libero quod aspernatur reprehenderit sapiente
-          accusamus!</p>
+        <article class="main__article">
+          <h1 class="main__title">Привет, Геннадий!</h1>
+          <p class="main__subtitle">Двери и окна закрыты, сигнализация включена.</p>
+          <section class="main__status">
+            <dl>
+              <dt>Дома</dt>
+              <dd>+23</dd>
+            </dl>
+            <dl>
+              <dt>За окном</dt>
+              <dd>+19<span class="svg-icon" name="cloud-drizzle"></span></dd>
+            </dl>
+          </section>
+        </article>
+        <section class="main__section main-devices-pager__container">
+          <div class="main-devices-pager__wrapper">
+            <div class="main-devices-pager__page">
+
+              {% for device in mainDevices %}
+                <div class="main-devices-pager__card-holder">
+                  {{ card(device, 'device') }}
+                </div>
+              {% endfor %}
+
+            </div>
+          </div>
+        </section>
       </div>
     </section>
     <section class="section layout__actions">

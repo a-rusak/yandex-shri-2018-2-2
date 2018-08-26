@@ -1,5 +1,47 @@
 .main {
   &__container {
+    display: grid;
+    grid-template-columns: 1fr 220px;
+  }
+  &__article {
+    padding: 25px;
+  }
+  &__title {
+    font-size: 27px;
+    line-height: 31px;
+    margin: 0;
+  }
+  &__subtitle {
+    margin: 6px 0 0 0;
+  }
+  &__status {
+    display: grid;
+    grid-template-columns: min-content min-content;
+    grid-column-gap: 20px;
+
+    dl {
+      margin: 25px 0;
+    }
+    dt {
+      margin: 0;
+      white-space: nowrap;
+      color: #858585;
+    }
+    dd {
+      margin: 0 0 0 -5px;
+      font-weight: bolder;
+      font-size: 36px;
+      line-height: 42px;
+      color: #333;
+      white-space: nowrap;
+
+      .svg-icon {
+        display: inline-block;
+        margin-left: 5px;
+      }
+    }
+  }
+  &__section {
 
   }
 }

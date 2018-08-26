@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
       try {
         cache.set(currPath, fetch(currPath).then(r => r.text()))
       } catch (e) {
+        console.error(e)
         cache.delete(currPath)
       }
     }

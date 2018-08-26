@@ -12,7 +12,7 @@
   &__wrapper {
     transition: transform 0.2s ease-in-out;
     display: grid;
-    grid-template-columns: repeat(1000, 100%);
+    grid-template-columns: repeat(100, 100%);
   }
   &__page {
     grid-gap: 15px;
