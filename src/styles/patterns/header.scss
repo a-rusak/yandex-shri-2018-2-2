@@ -2,19 +2,19 @@
   &__container {
     display: flex;
     align-items: center;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 32px;
+    padding-bottom: 32px;
   }
   &__title {
     margin: 0;
-    margin-right: 15px;
+    margin-right: 37px;
   }
   &__nav-list {
     display: flex;
     font-weight: bolder;
   }
   &__nav-item {
-    margin: 0 1em;
+    margin: 0 15px;
   }
   &__nav-item:not(.is-active) {
     opacity: 0.6;

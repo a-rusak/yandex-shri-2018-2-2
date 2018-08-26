@@ -14,43 +14,51 @@
   &:hover,
   &:focus {
     background-color: $color-bg-hover;
-    box-shadow: 0 2px 6px 0 rgba(197,186,186,0.50);
+    box-shadow: 0 2px 6px 0 rgba(197, 186, 186, 0.50);
   }
 
   &--action {
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-rows: 24px minmax(16px, 48px) minmax(0, min-content);
+    grid-template-rows: 24px minmax(10px, 48px) minmax(0, min-content);
   }
   &--device {
     width: 100%;
     height: 100%;
+    display: grid;
+    grid-template-rows: 24px minmax(10px, 68px) minmax(0, min-content);
+  }
+  &--active {
+    .temperature-body,
+    .sun-disk {
+      stroke: #f5a623;
+      stroke-opacity: 1;
+    }
+    .temperature-mercury {
+      fill: #ffd93e;
+      fill-opacity: 1;
+    }
+    .sun-ray {
+      stroke: #ffd93e;
+      stroke-opacity: 1;
+    }
   }
 
   &__title {
     margin: 0;
-    line-height: $line-height-small;
-    font-size: $font-size-small;
+    line-height: 16px;
+    font-size: 14px;
     font-weight: bolder;
     overflow: hidden;
     display: flex;
     align-items: flex-end;
-    margin-bottom: 5px;
   }
   &__label {
     overflow: hidden;
-    font-size: $font-size-x-small;
-    line-height: $line-height-x-small;
+    font-size: 12px;
+    line-height: 14px;
+    margin-top: 5px;
     color: $color-label;
   }
-}
-
-.temperature-body {
-  stroke: #f5a623;
-  stroke-opacity: 1;
-}
-.temperature-mercury {
-  fill: #ffd93e;
-  fill-opacity: 1;
 }

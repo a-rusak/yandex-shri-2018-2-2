@@ -13,7 +13,8 @@
     padding-top: 30px;
     padding-bottom: 30px;
     display: grid;
-    grid-gap: 26px;
+    grid-column-gap: 26px;
+    grid-row-gap: 36px;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
       'lm la'
