@@ -1,7 +1,9 @@
-<div class="card card--action" id="card-action-{{ id }}">
-  <span class="svg-icon" name="icon_{{ icon }}"></span>
-  <span class="card__title">{{ title }}</span>
-  {% if (label is defined) %}
-    <span class="card__label">{{ label }}</span>
-  {% endif %}
-</div>
+{% macro card(data, type) %}
+  <div class="card  {{ 'card--'~type }} {{ data.isActive ? 'card--active' }}" id="card-{{ type }}-{{ data.id }}">
+    <span class="svg-icon" name="icon_{{ data.icon }}"></span>
+    <span class="card__title">{{ data.title }}</span>
+    {% if (data.label is defined) %}
+      <span class="card__label">{{ data.label }}</span>
+    {% endif %}
+  </div>
+{% endmacro %}

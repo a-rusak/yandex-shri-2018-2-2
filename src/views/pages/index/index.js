@@ -1,4 +1,4 @@
 const template = require('./template.twig')
-const {benefits, logo, actions} = require('./data')
+const {benefits, logo, actions, devices} = require('./data')
 
-module.exports = template({benefits, logo, actions})
+module.exports = template({benefits, logo, actions, devices})

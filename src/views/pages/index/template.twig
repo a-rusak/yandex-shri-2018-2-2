@@ -1,4 +1,5 @@
 {% extends "../../layouts/base.twig" %}
+{% from "../../patterns/card.twig" import card %}
 
 {% block page %}
   <div class="container layout__container">
@@ -29,11 +30,13 @@
       <div class="section__container actions-pager__container">
         <div class="actions-pager__wrapper">
           <div class="actions-pager__page">
+
             {% for action in actions %}
               <div class="actions-pager__card-holder">
-                {% include '../../patterns/card.twig' with action only %}
+                {{ card(action, 'action') }}
               </div>
             {% endfor %}
+
           </div>
         </div>
       </div>
@@ -47,27 +50,13 @@
       <div class="section__container devices-pager__container">
         <div class="devices-pager__wrapper">
           <div class="devices-pager__page">
-            <div class="devices-pager__card-holder">
-              <div class="card card--device">2</div>
-            </div>
-            <div class="devices-pager__card-holder">
-              <div class="card card--device">3</div>
-            </div>
-            <div class="devices-pager__card-holder">
-              <div class="card card--device">4</div>
-            </div>
-            <div class="devices-pager__card-holder">
-              <div class="card card--device">5</div>
-            </div>
-            <div class="devices-pager__card-holder">
-              <div class="card card--device">6</div>
-            </div>
-            <div class="devices-pager__card-holder">
-              <div class="card card--device">7</div>
-            </div>
-            <div class="devices-pager__card-holder">
-              <div class="card card--device">8</div>
-            </div>
+
+            {% for device in devices %}
+              <div class="devices-pager__card-holder">
+                {{ card(device, 'device') }}
+              </div>
+            {% endfor %}
+
           </div>
         </div>
       </div>

@@ -2,10 +2,13 @@
   $color-bg: #F7F7F7;
   $color-bg-hover: $white;
   $color-label: #858585;
+  cursor: pointer;
+  transition-property: background-color, box-shadow;
+  transition-duration: .2s;
 
   background-color: $color-bg;
   border-radius: $border-radius-default;
-  padding: 14px 15px;
+  padding: 15px;
   display: flex;
   overflow: hidden;
   border: none;
