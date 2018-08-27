@@ -22,6 +22,9 @@
     {% include "../templates/footer.twig" %}
   {% endblock %}
 
-  <script src="https://rawgit.com/GoogleChrome/flipjs/master/dist/flip.js"></script>
+  {% block popup %}
+    {% include "../templates/popup.twig" %}
+  {% endblock %}
+
 </body>
 </html>

@@ -1,13 +1,6 @@
 {% macro card(data, type) %}
-  <input
-    type="checkbox"
-    class="popup__checkbox"
-    id="popup-checkbox-{{ type }}-{{ data.id }}"
-    data-card-id="card-{{ type }}-{{ data.id }}"
-  >
   <label
-    class="card popup__container {{ 'card--'~type }} {{ data.isActive ? 'card--active' }}"
-    for="popup-checkbox-{{ type }}-{{ data.id }}"
+    class="card {{ 'card--'~type }} {{ data.isActive ? 'card--active' }}"
     id="card-{{ type }}-{{ data.id }}"
   >
     <span class="svg-icon" name="icon_{{ data.icon }}"></span>
@@ -15,9 +8,10 @@
     {% if (data.label is defined) %}
       <span class="card__label">{{ data.label }}</span>
     {% endif %}
+    <input
+      type="checkbox"
+      class="popup__checkbox"
+      data-card-id="card-{{ type }}-{{ data.id }}"
+    >
   </label>
-  <label
-    class="popup__fader"
-    for="popup-checkbox-{{ type }}-{{ data.id }}" role="presentation"
-  ></label>
 {% endmacro %}
