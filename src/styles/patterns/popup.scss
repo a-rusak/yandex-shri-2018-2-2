@@ -1,0 +1,41 @@
+.popup {
+  $is-open: '.popup__checkbox:checked ~ &';
+
+  &__checkbox {
+    position: absolute;
+  }
+
+  &__fader {
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+    transition-property: opacity;
+    transition-duration: .2s;
+    z-index: 5;
+
+    /*#{$is-open} {
+      pointer-events: auto;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgb(51, 51, 51);
+      opacity: .5;
+    }*/
+  }
+
+  &__container {
+    z-index: 6;
+    // left: 50%;
+    // top: 50%;
+    transition: all 1s;
+
+    /*#{$is-open} {
+      position: fixed;
+      width: 630px;
+      height: 238px;
+      margin-left: -315px;
+      margin-top: -119px;
+    }*/
+  }
+}

@@ -60,7 +60,7 @@ module.exports = {
 
   devServer: {
     contentBase: './build',
-    port: 9100
+    port: 9111
   },
 
   resolve: {
