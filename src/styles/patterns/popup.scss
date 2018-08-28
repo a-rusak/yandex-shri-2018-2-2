@@ -11,10 +11,10 @@
     opacity: 0;
     pointer-events: none;
     transition-property: opacity;
-    transition-duration: .2s;
+    transition-duration: $popup-animation-duration;
     z-index: 5;
 
-    &.is-popup-open {
+    body.is-popup-open & {
       pointer-events: auto;
       top: 0;
       right: 0;
@@ -35,10 +35,13 @@
     background-color: red;
     border-radius: 20px;
     padding: 20px;
-    opacity: 0.8;
+    opacity: 0.05;
     pointer-events: none;
     left: 200px;
     top: 200px;
+    transition-property: width, height, left, top;
+    transition-duration: $popup-animation-duration;
+    transition-timing-function: ease-in-out;
     // transition: all 1s;
 
     /*#{$is-open} {
@@ -49,8 +52,27 @@
       margin-top: -119px;
     }*/
 
-    &.is-popup-open {
+    body.is-popup-open & {
       opacity: 1;
+      pointer-events: auto;
     }
+  }
+}
+
+body.is-popup-open {
+  position: fixed;
+  overflow: hidden;
+
+}
+
+.header,
+.main,
+.footer {
+  transition-duration: $popup-animation-duration;
+  transition-property: filter;
+  filter: blur(0);
+
+  body.is-popup-open & {
+    filter: blur(4px);
   }
 }
