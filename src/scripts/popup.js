@@ -1,7 +1,6 @@
-'use strict'
+import {fillPopup} from './popup-data'
 
 document.addEventListener('DOMContentLoaded', () => {
-  const TRANSITION = 'all .4s'
   const popup  = document.querySelector('.popup__container')
   const fader = document.querySelector('.popup__fader')
 
@@ -28,45 +27,55 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function openPopup(id) {
     const el = document.querySelector(`#${id}`)
-    const {width, height, top, left} = el.getBoundingClientRect()
+    const elDim = el.getBoundingClientRect()
 
-    requestAnimationFrame(() => {
-      popup.style.width = `${width}px`
-      popup.style.height = `${height}px`
-      popup.style.top = `${top}px`
-      popup.style.left = `${left}px`
+    fillPopup(popup, el)
+
+    const pWidth = popup.offsetWidth
+    const pHeight = popup.offsetHeight
+    const pLeft = (document.documentElement.clientWidth - pWidth) / 2
+    const pTop = (document.documentElement.clientHeight - pHeight) / 2
+    // popup.style.top = `${pTop}px`
+    // popup.style.left = `${pLeft}px`
+
+    // requestAnimationFrame(() => {
+      popup.style.width = `${elDim.width * 2}px`
+      popup.style.height = `${elDim.height * 2}px`
+      popup.style.top = `${elDim.top}px`
+      popup.style.left = `${elDim.left - elDim.width / 2}px`
 
       requestAnimationFrame(() => {
         document.body.classList.add('is-popup-open')
         fader.dataset.cardId = id
         popup.style.transition = popupTransition
-        popup.style.width = null
-        popup.style.height = null
-        popup.style.top = null
-        popup.style.left = null
+        popup.style.width = `${pWidth}px`
+        popup.style.height = `${pHeight}px`
+        popup.style.top = `${pTop}px`
+        popup.style.left = `${pLeft}px`
       })
-    })
+    // })
   }
   function closePopup(id) {
     const el = document.querySelector(`#${id}`)
-    const {width, height, top, left} = el.getBoundingClientRect()
+    const elDim = el.getBoundingClientRect()
 
-    requestAnimationFrame(() => {
-      popup.style.width = `${width}px`
-      popup.style.height = `${height}px`
-      popup.style.top = `${top}px`
-      popup.style.left = `${left}px`
+    // requestAnimationFrame(() => {
+      document.body.classList.remove('is-popup-open')
+      popup.style.width = `${elDim.width * 2}px`
+      popup.style.height = `${elDim.height * 2}px`
+      popup.style.top = `${elDim.top}px`
+      popup.style.left = `${elDim.left - elDim.width / 2}px`
 
       fader.dataset.cardId = ''
 
       popup.addEventListener('transitionend', () => {
         popup.style.transition = 'none'
-        document.body.classList.remove('is-popup-open')
+        // document.body.classList.remove('is-popup-open')
         popup.style.width = null
         popup.style.height = null
         popup.style.top = null
         popup.style.left = null
       }, { once: true })
-    })
+    // })
   }
 })
